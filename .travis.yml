@@ -8,3 +8,15 @@ before_install:
 script:
   - docker run -e CI=true react-play npm run test -- --coverage
 language: generic
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'react-play'
+  env: 'ReactPlay-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-068820429366'
+  bucket_path: 'react-play'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

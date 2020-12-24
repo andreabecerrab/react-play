@@ -1,0 +1,34 @@
+FROM node:alpine
+WORKDIR '/app'
+COPY package.json .
+RUN npm install
+COPY . .
+CMD ["npm", "run", "start"]
+
+#docker-compose down && docker-compose up --build
+
+#first create docker file
+#run docker build 
+#run dockerfile for dev (other name) -> docker build -f Dockerfile.dev .
+#to expose in a port
+#docker run -p 3001:3000 ce19261ba38a
+
+
+#to refresh the project directory in docker
+#rebuild or another solution (reference) 
+#docker run -p 3001:3000 (-v $(pwd):/app) ID--> take this folder and map it to the app folder
+#docker run -p 3001:3000 (-v /app/node_nodules) --->  skip the map of that fold        -v $(pwd):/app
+
+
+
+#create a smaller command (docker compose)
+#docker-compose up
+#docker with different dockerfile
+
+
+#run tests 
+#docker run 2a3b31cc78fc npm run test
+#docker run -it 2a3b31cc78fc npm run test -enter to refresh
+
+# docker attach d3aeded2fdf8
+#docker exec -it  f1b8752bfbb6 sh

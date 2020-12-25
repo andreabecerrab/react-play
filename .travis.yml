@@ -13,7 +13,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'us-east-2'
   app: 'react-play'
-  env: 'ReactPlay-env'
+  env: 'ReactPlay-env-1'
   bucket_name: 'elasticbeanstalk-us-east-2-068820429366'
   bucket_path: 'react-play'
   access_key_id: $AWS_ACCESS_KEY
